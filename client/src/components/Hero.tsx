@@ -4,16 +4,16 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-mobile md:bg-hero-desktop"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663429267594/aWWy5o9FQovg9dFpMNicRb/hero-literary-journal-FmGyAEsVBma8JRRSG2wvah.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      {/* Overlay for better text readability - stronger on mobile */}
-      <div className="absolute inset-0 bg-background/40 md:bg-background/40" style={{
-        background: 'linear-gradient(135deg, rgba(245, 241, 232, 0.6) 0%, rgba(245, 241, 232, 0.3) 100%)'
+      {/* Overlay for better text readability - lighter on mobile to show more background */}
+      <div className="absolute inset-0 bg-background/20 md:bg-background/40" style={{
+        background: 'linear-gradient(135deg, rgba(245, 241, 232, 0.3) 0%, rgba(245, 241, 232, 0.2) 100%)'
       }} />
 
       {/* Content */}
