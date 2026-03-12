@@ -33,6 +33,11 @@ export default function Hero() {
           The Literary Society
         </h1>
 
+        {/* College Name */}
+        <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 mb-8 font-medium">
+          STME NMIMS Hyderabad
+        </p>
+
         {/* Subtitle */}
         <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed font-light px-4">
           "A space for stories, ideas, poetry, debate, and expression."
