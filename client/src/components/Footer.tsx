@@ -1,4 +1,5 @@
 import { Mail, Instagram } from 'lucide-react';
+import { Link } from 'wouter';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -31,27 +32,64 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#home" className="text-foreground/70 hover:text-accent transition-colors duration-300">
-                  Home
-                </a>
+                <Link href="/">
+                  <a className="text-foreground/70 hover:text-accent transition-colors duration-300">
+                    Home
+                  </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="text-foreground/70 hover:text-accent transition-colors duration-300">
+                <a 
+                  href="/#about" 
+                  className="text-foreground/70 hover:text-accent transition-colors duration-300"
+                  onClick={(e) => {
+                    if (window.location.pathname === '/') {
+                      e.preventDefault();
+                      const element = document.querySelector('#about');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                  }}
+                >
                   About
                 </a>
               </li>
               <li>
-                <a href="#events" className="text-foreground/70 hover:text-accent transition-colors duration-300">
-                  Events
-                </a>
+                <Link href="/events">
+                  <a className="text-foreground/70 hover:text-accent transition-colors duration-300">
+                    Events
+                  </a>
+                </Link>
               </li>
               <li>
-                <a href="#feedback" className="text-foreground/70 hover:text-accent transition-colors duration-300">
-                  Feedback
-                </a>
+                <Link href="/reading-corner">
+                  <a className="text-foreground/70 hover:text-accent transition-colors duration-300">
+                    Reading Corner
+                  </a>
+                </Link>
               </li>
               <li>
-                <a href="#join" className="text-foreground/70 hover:text-accent transition-colors duration-300">
+                <Link href="/feedback">
+                  <a className="text-foreground/70 hover:text-accent transition-colors duration-300">
+                    Feedback
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <a 
+                  href="/#join" 
+                  className="text-foreground/70 hover:text-accent transition-colors duration-300"
+                  onClick={(e) => {
+                    if (window.location.pathname === '/') {
+                      e.preventDefault();
+                      const element = document.querySelector('#join');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }
+                  }}
+                >
                   Join
                 </a>
               </li>

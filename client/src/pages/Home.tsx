@@ -1,8 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Events from '@/components/Events';
-import Feedback from '@/components/Feedback';
+import EventsPreview from '@/components/EventsPreview';
 import Join from '@/components/Join';
 import Footer from '@/components/Footer';
 
@@ -22,8 +21,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <About />
-        <Events />
-        <Feedback />
+        <EventsPreview />
         <Join />
       </main>
       <Footer />
