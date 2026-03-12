@@ -60,8 +60,8 @@ export default function ReadingCorner() {
   };
 
   return (
-    <section id="reading-corner" className="py-20 md:py-32 bg-background">
-      <div className="container">
+    <section id="reading-corner" className="py-20 md:py-32 bg-background pt-0">
+      <div className="container pt-20 md:pt-32">
         {/* Page Header */}
         <div className="mb-16 text-center">
           <div className="flex justify-center mb-6">
