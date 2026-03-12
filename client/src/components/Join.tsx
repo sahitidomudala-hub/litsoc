@@ -35,8 +35,36 @@ export default function Join() {
           </h3>
 
           <p className="text-lg sm:text-xl text-foreground/80 mb-8 md:mb-12 leading-relaxed font-light px-4">
-            Ready to join our literary community? We're currently conducting interviews for new members. Whether you love reading, writing, debating, or simply exploring ideas, this is your place.
+            Ready to join our literary community? Whether you love reading, writing, debating, or simply exploring ideas, this is your place.
           </p>
+
+          {/* Interview Details Box */}
+          <div className="bg-card border-2 border-accent rounded-lg p-6 md:p-8 mb-8 max-w-2xl mx-auto">
+            <h4 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2" style={{ fontFamily: 'Georgia, serif' }}>
+              ⏳ Interview Details
+            </h4>
+            <div className="space-y-3 text-left">
+              <p className="text-foreground/80 flex items-start gap-2">
+                <span className="text-accent font-semibold">📅</span>
+                <span><strong>Friday, 13th March</strong> – 5:00 PM to 6:00 PM</span>
+              </p>
+              <p className="text-foreground/80 flex items-start gap-2">
+                <span className="text-accent font-semibold">📅</span>
+                <span><strong>Saturday, 14th March</strong> – 4:00 PM to 6:00 PM</span>
+              </p>
+              <p className="text-foreground/80 flex items-start gap-2">
+                <span className="text-accent font-semibold">📍</span>
+                <span><strong>Venue:</strong> L-16</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Registration Closing Notice */}
+          <div className="bg-accent/10 border border-accent rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+            <p className="text-accent font-semibold text-lg">
+              ⚠️ Registrations close soon!
+            </p>
+          </div>
 
           {/* CTA Button */}
           <a
