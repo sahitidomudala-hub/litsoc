@@ -22,78 +22,22 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Reading Corner Call-to-Action */}
           <div>
             <h4
               className="text-lg font-bold text-foreground mb-4"
               style={{ fontFamily: 'Georgia, serif' }}
             >
-              Quick Links
+              📚 Don't Miss Our Articles
             </h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/">
-                  <a className="text-foreground/70 hover:text-accent transition-colors duration-300">
-                    Home
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <a 
-                  href="/#about" 
-                  className="text-foreground/70 hover:text-accent transition-colors duration-300"
-                  onClick={(e) => {
-                    if (window.location.pathname === '/') {
-                      e.preventDefault();
-                      const element = document.querySelector('#about');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }
-                  }}
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <Link href="/events">
-                  <a className="text-foreground/70 hover:text-accent transition-colors duration-300">
-                    Events
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/reading-corner">
-                  <a className="text-foreground/70 hover:text-accent transition-colors duration-300">
-                    Reading Corner
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/feedback">
-                  <a className="text-foreground/70 hover:text-accent transition-colors duration-300">
-                    Feedback
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <a 
-                  href="/#join" 
-                  className="text-foreground/70 hover:text-accent transition-colors duration-300"
-                  onClick={(e) => {
-                    if (window.location.pathname === '/') {
-                      e.preventDefault();
-                      const element = document.querySelector('#join');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }
-                  }}
-                >
-                  Join
-                </a>
-              </li>
-            </ul>
+            <p className="text-foreground/70 leading-relaxed text-sm mb-4">
+              Discover thoughtful articles about literature, writing, and life skills curated for college students.
+            </p>
+            <Link href="/reading-corner">
+              <a className="text-accent hover:text-accent/80 font-semibold transition-colors duration-300 underline text-sm">
+                Explore Reading Corner →
+              </a>
+            </Link>
           </div>
 
           {/* Contact & Social */}

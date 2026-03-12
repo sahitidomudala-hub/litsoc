@@ -46,10 +46,6 @@ export default function Join() {
             <div className="space-y-3 text-left">
               <p className="text-foreground/80 flex items-start gap-2">
                 <span className="text-accent font-semibold">📅</span>
-                <span><strong>Friday, 13th March</strong> – 5:00 PM to 6:00 PM</span>
-              </p>
-              <p className="text-foreground/80 flex items-start gap-2">
-                <span className="text-accent font-semibold">📅</span>
                 <span><strong>Saturday, 14th March</strong> – 4:00 PM to 6:00 PM</span>
               </p>
               <p className="text-foreground/80 flex items-start gap-2">

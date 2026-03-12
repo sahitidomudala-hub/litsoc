@@ -11,17 +11,19 @@ export default function Hero() {
         backgroundPosition: 'center',
       }}
     >
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/40" />
+      {/* Overlay for better text readability - stronger on mobile */}
+      <div className="absolute inset-0 bg-background/40 md:bg-background/40" style={{
+        background: 'linear-gradient(135deg, rgba(245, 241, 232, 0.6) 0%, rgba(245, 241, 232, 0.3) 100%)'
+      }} />
 
       {/* Content */}
       <div className="relative z-10 container text-center px-4 py-20">
-        {/* Decorative quote mark */}
-        <div className="flex justify-center mb-8 opacity-60">
+        {/* NMIMS Logo at top */}
+        <div className="flex justify-center mb-8 opacity-90">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663429267594/aWWy5o9FQovg9dFpMNicRb/quote-mark-accent-nAhrwhnDKKyephGnKuW6ZG.webp"
-            alt=""
-            className="w-16 h-16"
+            src="/nmlogo.jpg"
+            alt="NMIMS Logo"
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain hover:opacity-100 transition-opacity duration-300"
           />
         </div>
 
@@ -34,9 +36,18 @@ export default function Hero() {
         </h1>
 
         {/* College Name */}
-        <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 mb-8 font-medium">
+        <p className="text-lg sm:text-xl md:text-2xl text-foreground/90 mb-6 font-medium">
           STME NMIMS Hyderabad
         </p>
+
+        {/* College Logo */}
+        <div className="flex justify-center mb-8">
+          <img
+            src="/logo_trans.png"
+            alt="College Logo"
+            className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+          />
+        </div>
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed font-light px-4">

@@ -264,9 +264,65 @@ html {
     padding-bottom: 3rem !important;
   }
   
-  /* Mobile hero background - no fixed attachment for better performance */
+  /* Mobile hero background - try different positioning for better details */
   #home {
     background-attachment: scroll !important;
+    background-position: center top !important; /* Show top portion with more details */
+    background-size: cover !important;
+  }
+  
+  /* Tighter spacing in hero section on mobile */
+  #home .container {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Reduce margins between hero elements on mobile */
+  #home h1 {
+    margin-bottom: 1rem !important;
+    font-size: 2.5rem !important; /* Slightly smaller title */
+    line-height: 1.1 !important;
+  }
+  
+  #home p {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Smaller logos on mobile for better proportion */
+  #home img {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Better button sizing on mobile */
+  #home button {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Very small phones optimization */
+@media (max-width: 375px) {
+  #home h1 {
+    font-size: 2.25rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  #home p {
+    font-size: 1rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  /* Even smaller logos on very small screens */
+  #home .opacity-90 img {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+  
+  #home .mb-8:last-of-type img {
+    width: 4rem !important;
+    height: 4rem !important;
   }
 }
 
@@ -276,12 +332,18 @@ html {
     padding-top: 4rem !important;
     padding-bottom: 4rem !important;
   }
+  
+  /* Tablet hero background positioning */
+  #home {
+    background-position: center 30% !important; /* Show middle-upper portion */
+  }
 }
 
 /* Desktop hero background with fixed attachment */
 @media (min-width: 1024px) {
   #home {
     background-attachment: fixed !important;
+    background-position: center !important; /* Full composition */
   }
 }
 
