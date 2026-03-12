@@ -1,9 +1,13 @@
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Mail, BookOpen, RefreshCw } from 'lucide-react';
-import { useGuardianArticles } from '@/hooks/useGuardianArticles';
+import { ExternalLink, Mail, BookOpen } from 'lucide-react';
+// import { useGuardianArticles } from '@/hooks/useGuardianArticles'; // Temporarily disabled
 
 export default function ReadingCorner() {
-  const { articles: liveArticles, loading, error, refetch } = useGuardianArticles();
+  // const { articles: liveArticles, loading, error, refetch } = useGuardianArticles(); // Temporarily disabled
+  const liveArticles: any[] = []; // Empty for now
+  const loading = false;
+  const error = null;
+  const refetch = () => {}; // Placeholder
 
   // Curated articles that are always shown
   const curatedArticles = [
@@ -70,23 +74,25 @@ export default function ReadingCorner() {
           </p>
         </div>
 
-        {/* Refresh Button for Live Articles */}
-        <div className="max-w-6xl mx-auto mb-8 text-center">
-          <Button
-            onClick={refetch}
-            disabled={loading}
-            variant="outline"
-            className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 inline-flex items-center gap-2"
-          >
-            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
-            {loading ? 'Loading Articles...' : 'Refresh Articles'}
-          </Button>
-          {error && (
-            <p className="text-sm text-foreground/60 mt-2">
-              Showing curated articles (live articles temporarily unavailable)
-            </p>
-          )}
-        </div>
+        {/* Refresh Button for Live Articles - Temporarily Hidden */}
+        {false && (
+          <div className="max-w-6xl mx-auto mb-8 text-center">
+            <Button
+              onClick={refetch}
+              disabled={loading}
+              variant="outline"
+              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 inline-flex items-center gap-2"
+            >
+              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
+              {loading ? 'Loading Articles...' : 'Refresh Articles'}
+            </Button>
+            {error && (
+              <p className="text-sm text-foreground/60 mt-2">
+                Showing curated articles (live articles temporarily unavailable)
+              </p>
+            )}
+          </div>
+        )}
 
         {/* Blog Articles Grid */}
         <div className="max-w-6xl mx-auto mb-20">
