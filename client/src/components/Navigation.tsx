@@ -41,18 +41,6 @@ export default function Navigation() {
       return;
     }
     
-    // Special handling for Events - scroll to events section on home page, otherwise go to events page
-    if (item.label === 'Events') {
-      if (location === '/') {
-        const element = document.querySelector('#events');
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-      // If not on home page, the link will naturally go to /events page
-      return;
-    }
-    
     // If clicking Join, always go to home page join section
     if (item.label === 'Join') {
       if (location === '/') {
@@ -124,7 +112,7 @@ export default function Navigation() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            item.type === 'link' && item.label !== 'Events' ? (
+            item.type === 'link' ? (
               <Link key={item.label} href={item.href}>
                 <a 
                   className="nav-link text-sm font-medium"
@@ -132,20 +120,6 @@ export default function Navigation() {
                     if (item.label === 'Home' && location === '/') {
                       e.preventDefault();
                       window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                  }}
-                >
-                  {item.label}
-                </a>
-              </Link>
-            ) : item.label === 'Events' ? (
-              <Link key={item.label} href={item.href}>
-                <a 
-                  className="nav-link text-sm font-medium"
-                  onClick={(e) => {
-                    if (location === '/') {
-                      e.preventDefault();
-                      handleNavClick(item);
                     }
                   }}
                 >
