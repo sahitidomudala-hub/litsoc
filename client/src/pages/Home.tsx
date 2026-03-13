@@ -1,7 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import EventsPreview from '@/components/EventsPreview';
+import ReadingCornerPreview from '@/components/ReadingCornerPreview';
 import Join from '@/components/Join';
 import Footer from '@/components/Footer';
 
@@ -16,12 +16,12 @@ import Footer from '@/components/Footer';
  */
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="flex flex-col bg-background text-foreground">
       <Navigation />
       <main className="flex-1">
         <Hero />
         <About />
-        <EventsPreview />
+        <ReadingCornerPreview />
         <Join />
       </main>
       <Footer />

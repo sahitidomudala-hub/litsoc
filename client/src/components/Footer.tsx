@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-foreground/5 border-t border-border py-16">
       <div className="container">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 mb-12">
           {/* About */}
           <div>
             <h4
@@ -20,24 +20,6 @@ export default function Footer() {
             <p className="text-foreground/70 leading-relaxed text-sm">
               A space for stories, ideas, poetry, debate, and expression. Join our community of readers and writers.
             </p>
-          </div>
-
-          {/* Reading Corner Call-to-Action */}
-          <div>
-            <h4
-              className="text-lg font-bold text-foreground mb-4"
-              style={{ fontFamily: 'Georgia, serif' }}
-            >
-              📚 Don't Miss Our Articles
-            </h4>
-            <p className="text-foreground/70 leading-relaxed text-sm mb-4">
-              Discover thoughtful articles about literature, writing, and life skills curated for college students.
-            </p>
-            <Link href="/reading-corner">
-              <a className="text-accent hover:text-accent/80 font-semibold transition-colors duration-300 underline text-sm">
-                Explore Reading Corner →
-              </a>
-            </Link>
           </div>
 
           {/* Contact & Social */}

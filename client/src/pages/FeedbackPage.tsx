@@ -4,7 +4,7 @@ import Feedback from '@/components/Feedback';
 
 export default function FeedbackPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="flex flex-col bg-background text-foreground">
       <Navigation />
       <main className="flex-1">
         <Feedback />

@@ -1,19 +1,12 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Calendar, MapPin, Clock } from 'lucide-react';
+import { Link } from 'wouter';
 
 export default function EventsPage() {
-  const upcomingEvents = [
-    {
-      title: 'Inauguration and Mental Wellness Talk',
-      location: 'MPH',
-      date: '17 March 2025',
-      time: 'TBD',
-      description: 'A conversation about mental health, reflection, and wellbeing.',
-    },
+  const comingSoonSections = [
+    { name: 'Team', emoji: '👥' },
+    { name: 'Gallery', emoji: '📸' }
   ];
-
-  const comingSoonSections = ['Team', 'Gallery', 'Past Events', 'Student Publications'];
 
   return (
     <div className="flex flex-col bg-background text-foreground">
@@ -38,39 +31,19 @@ export default function EventsPage() {
               >
                 Upcoming Events
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                {upcomingEvents.map((event, index) => (
-                  <div
-                    key={index}
-                    className="stagger-item event-card flex flex-col"
+              <div className="text-center">
+                <div className="bg-card rounded-lg p-8 md:p-12 max-w-2xl mx-auto border border-border">
+                  <div className="text-6xl mb-6 text-accent/50">📅</div>
+                  <h3
+                    className="text-2xl font-bold text-foreground mb-4"
+                    style={{ fontFamily: 'Georgia, serif' }}
                   >
-                    <h3
-                      className="text-2xl font-bold text-foreground mb-4"
-                      style={{ fontFamily: 'Georgia, serif' }}
-                    >
-                      {event.title}
-                    </h3>
-
-                    <div className="space-y-3 mb-6 flex-grow">
-                      <div className="flex items-start gap-3 text-foreground/70">
-                        <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                        <span>{event.location}</span>
-                      </div>
-                      <div className="flex items-start gap-3 text-foreground/70">
-                        <Calendar className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                        <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-start gap-3 text-foreground/70">
-                        <Clock className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                        <span>{event.time}</span>
-                      </div>
-                    </div>
-
-                    <p className="text-foreground/70 leading-relaxed italic border-t border-border pt-4">
-                      "{event.description}"
-                    </p>
-                  </div>
-                ))}
+                    Events Updating Soon
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    We're planning exciting literary events, discussions, and creative gatherings. Stay tuned for updates!
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -82,23 +55,32 @@ export default function EventsPage() {
               >
                 More Coming Soon
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
                 {comingSoonSections.map((section, index) => (
                   <div
                     key={index}
                     className="stagger-item bg-card rounded-lg p-8 text-center border border-border hover:border-accent transition-colors duration-300"
                   >
                     <div className="text-4xl mb-4 text-accent/50">
-                      {section === 'Team' && '👥'}
-                      {section === 'Gallery' && '📸'}
-                      {section === 'Past Events' && '📅'}
-                      {section === 'Student Publications' && '📖'}
+                      {section.emoji}
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground/60">{section}</h3>
+                    <h3 className="text-lg font-semibold text-foreground/60">{section.name}</h3>
                     <p className="text-sm text-foreground/50 mt-2">Updating Soon</p>
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Event Suggestions */}
+            <div className="text-center mt-12">
+              <p className="text-foreground/60 text-sm mb-2">
+                Have any events you want us to organize?
+              </p>
+              <Link href="/feedback">
+                <a className="text-accent hover:text-accent/80 font-semibold transition-colors duration-300 underline text-sm">
+                  Share your ideas with us →
+                </a>
+              </Link>
             </div>
           </div>
         </section>

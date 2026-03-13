@@ -1,10 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Change navbar background on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { label: 'Home', href: '/', type: 'link' },
@@ -78,7 +93,11 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
+    <nav className={`sticky top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-background/95 backdrop-blur-sm border-border shadow-sm' 
+        : 'bg-transparent border-transparent'
+    }`}>
       <div className="container flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/">

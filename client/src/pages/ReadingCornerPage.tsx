@@ -4,7 +4,7 @@ import ReadingCorner from '@/components/ReadingCorner';
 
 export default function ReadingCornerPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="flex flex-col bg-background text-foreground">
       <Navigation />
       <main className="flex-1">
         <ReadingCorner />

@@ -134,7 +134,7 @@ export default function ReadingCorner() {
         </div>
 
         {/* Student Submissions Section */}
-        <div className="max-w-4xl mx-auto">
+        <div id="submit-writing" className="max-w-4xl mx-auto">
           <div className="bg-secondary/30 rounded-lg p-8 md:p-12 border border-border">
             <div className="text-center mb-8">
               <h2
