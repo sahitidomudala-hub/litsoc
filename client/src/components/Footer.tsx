@@ -84,7 +84,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-foreground/60 text-xs">
-            © {currentYear} The Literary Society. All rights reserved.
+            © {currentYear} The Literary Society, STME NMIMS Hyderabad. All rights reserved.
           </p>
         </div>
       </div>
