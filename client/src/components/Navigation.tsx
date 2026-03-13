@@ -1,39 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  // Hide/show navigation on scroll (mobile only)
-  useEffect(() => {
-    const controlNavbar = () => {
-      if (window.innerWidth <= 768) { // Only on mobile/tablet
-        if (typeof window !== 'undefined') {
-          if (window.scrollY > lastScrollY && window.scrollY > 100) {
-            // Scrolling down & past 100px
-            setIsVisible(false);
-          } else {
-            // Scrolling up
-            setIsVisible(true);
-          }
-          setLastScrollY(window.scrollY);
-        }
-      } else {
-        setIsVisible(true); // Always visible on desktop
-      }
-    };
-
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlNavbar);
-      return () => {
-        window.removeEventListener('scroll', controlNavbar);
-      };
-    }
-  }, [lastScrollY]);
 
   const navItems = [
     { label: 'Home', href: '/', type: 'link' },
@@ -107,9 +78,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className={`sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm transition-transform duration-300 ${
-      isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
+    <nav className="sticky top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="container flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/">
