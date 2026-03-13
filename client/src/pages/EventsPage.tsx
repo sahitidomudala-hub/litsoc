@@ -5,7 +5,7 @@ import { Calendar, MapPin, Clock } from 'lucide-react';
 export default function EventsPage() {
   const upcomingEvents = [
     {
-      title: 'Mental Health Session',
+      title: 'Inauguration and Mental Wellness Talk',
       location: 'MPH',
       date: '17 March 2025',
       time: 'TBD',
@@ -16,7 +16,7 @@ export default function EventsPage() {
   const comingSoonSections = ['Team', 'Gallery', 'Past Events', 'Student Publications'];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="flex flex-col bg-background text-foreground">
       <Navigation />
       <main className="flex-1">
         <section className="py-20 md:py-32 bg-secondary/30">

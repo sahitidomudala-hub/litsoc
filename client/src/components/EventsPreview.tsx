@@ -5,7 +5,7 @@ import { Link } from 'wouter';
 export default function EventsPreview() {
   const upcomingEvents = [
     {
-      title: 'Mental Health Session',
+      title: 'Inauguration and Mental Wellness Talk',
       location: 'MPH',
       date: '17 March 2025',
       time: 'TBD',
