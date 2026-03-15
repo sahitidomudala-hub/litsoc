@@ -66,12 +66,12 @@ export default function ReadingCorner() {
     }
   ];
 
-  // Auto-slide functionality - every 10 seconds
+  // Auto-slide functionality - every 7 seconds
   useEffect(() => {
     if (!isHovered) {
       const interval = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % curatedArticles.length);
-      }, 10000);
+      }, 7000);
       return () => clearInterval(interval);
     }
   }, [isHovered, curatedArticles.length]);
@@ -191,12 +191,12 @@ export default function ReadingCorner() {
             </button>
 
             {/* Navigation Dots */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 md:gap-3">
               {curatedArticles.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
                     index === currentSlide ? 'bg-white scale-110' : 'bg-white/50 hover:bg-white/70'
                   }`}
                 />
