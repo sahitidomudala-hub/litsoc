@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import EventsPage from "@/pages/EventsPage";
 import ReadingCornerPage from "@/pages/ReadingCornerPage";
 import FeedbackPage from "@/pages/FeedbackPage";
+import JoinPage from "@/pages/JoinPage";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -17,6 +18,7 @@ function Router() {
       <Route path={"/events"} component={EventsPage} />
       <Route path={"/reading-corner"} component={ReadingCornerPage} />
       <Route path={"/feedback"} component={FeedbackPage} />
+      <Route path={"/join"} component={JoinPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

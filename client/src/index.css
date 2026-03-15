@@ -211,11 +211,35 @@
 
   .nav-link::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+    @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-accent transition-all duration-300 ease-out;
+    transform: translateX(-50%);
   }
 
   .nav-link:hover::after {
     @apply w-full;
+  }
+
+  /* Enhanced button interactions */
+  .btn-enhanced {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+  }
+
+  .btn-enhanced::before {
+    content: '';
+    @apply absolute inset-0 bg-accent/10 scale-0 transition-transform duration-300 ease-out;
+    border-radius: inherit;
+  }
+
+  .btn-enhanced:hover::before {
+    @apply scale-100;
+  }
+
+  .btn-enhanced .btn-arrow {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .btn-enhanced:hover .btn-arrow {
+    @apply translate-x-1;
   }
 
   @media (min-width: 640px) {

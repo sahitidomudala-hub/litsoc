@@ -1,40 +1,49 @@
+import { BookOpen, Star, Drama, MessageCircle, PenTool, Users } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+
 export default function About() {
+  const { elementRef, isIntersecting } = useIntersectionObserver({ threshold: 0.2 });
+
   const activities = [
     {
       title: 'Poetry',
       description: 'Share and celebrate the power of verse in all its forms.',
-      icon: '🌟',
+      icon: Star,
     },
     {
       title: 'Storytelling',
       description: 'Explore narratives that inspire, challenge, and transform.',
-      icon: '📚',
+      icon: BookOpen,
     },
     {
       title: 'Creative Writing',
       description: 'Develop your voice and craft in a supportive community.',
-      icon: '✒️',
+      icon: PenTool,
     },
     {
       title: 'Debates',
       description: 'Engage in thoughtful discussions about literature and ideas.',
-      icon: '🗣️',
+      icon: Users,
     },
     {
       title: 'Theatre',
       description: 'Bring stories to life through performance and drama.',
-      icon: '🎭',
+      icon: Drama,
     },
     {
       title: 'Open Discussions',
       description: 'Connect with fellow readers and writers in meaningful dialogue.',
-      icon: '💭',
+      icon: MessageCircle,
     },
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-background">
-      <div className="container">
+    <section 
+      id="about" 
+      className="py-20 md:py-32 bg-background"
+      ref={elementRef}
+    >
+      <div className={`container transition-all duration-700 ${isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Section Header */}
         <div className="mb-16 text-center">
           <h2 className="section-title">About Us</h2>
@@ -56,18 +65,18 @@ export default function About() {
           {activities.map((activity, index) => (
             <div
               key={index}
-              className="stagger-item event-card group"
+              className="stagger-item event-card group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out hover:border-accent/30"
             >
-              <div className="text-4xl mb-4 group-hover:text-accent transition-colors duration-300">
-                {activity.icon}
+              <div className="flex justify-center mb-4">
+                <activity.icon className="w-10 h-10 text-accent/70 group-hover:text-accent group-hover:scale-110 transition-all duration-300 ease-out" />
               </div>
               <h3
-                className="text-xl font-bold text-foreground mb-3"
+                className="text-xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300"
                 style={{ fontFamily: 'Georgia, serif' }}
               >
                 {activity.title}
               </h3>
-              <p className="text-foreground/70 leading-relaxed">
+              <p className="text-foreground/70 leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                 {activity.description}
               </p>
             </div>

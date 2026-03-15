@@ -2,7 +2,6 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import ReadingCornerPreview from '@/components/ReadingCornerPreview';
-import Join from '@/components/Join';
 import Footer from '@/components/Footer';
 
 /**
@@ -22,7 +21,6 @@ export default function Home() {
         <Hero />
         <About />
         <ReadingCornerPreview />
-        <Join />
       </main>
       <Footer />
     </div>

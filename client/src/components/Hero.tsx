@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { Link } from 'wouter';
 
 export default function Hero() {
   return (
@@ -60,13 +61,17 @@ export default function Hero() {
         </div>
 
         {/* CTA Button */}
-        <Button
-          size="lg"
-          className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-lg transition-all duration-300 hover:shadow-lg"
-          onClick={() => document.getElementById('join')?.scrollIntoView({ behavior: 'smooth' })}
-        >
-          Join Us
-        </Button>
+        <Link href="/join">
+          <Button
+            size="lg"
+            className="btn-enhanced bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-lg transition-all duration-300 hover:shadow-lg inline-flex items-center gap-2"
+          >
+            Join Us
+            <svg className="btn-arrow w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Button>
+        </Link>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">

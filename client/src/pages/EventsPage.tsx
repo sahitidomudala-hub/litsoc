@@ -1,11 +1,12 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Link } from 'wouter';
+import { Calendar, Users, Camera } from 'lucide-react';
 
 export default function EventsPage() {
   const comingSoonSections = [
-    { name: 'Team', emoji: '👥' },
-    { name: 'Gallery', emoji: '📸' }
+    { name: 'Team', icon: Users },
+    { name: 'Gallery', icon: Camera }
   ];
 
   return (
@@ -32,8 +33,10 @@ export default function EventsPage() {
                 Upcoming Events
               </h2>
               <div className="text-center">
-                <div className="bg-card rounded-lg p-8 md:p-12 max-w-2xl mx-auto border border-border">
-                  <div className="text-6xl mb-6 text-accent/50">📅</div>
+                <div className="bg-card rounded-lg p-8 md:p-12 max-w-2xl mx-auto border border-border hover:border-accent/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                  <div className="flex justify-center mb-6">
+                    <Calendar className="w-16 h-16 text-accent/50 group-hover:text-accent/70 group-hover:scale-105 transition-all duration-300 ease-out" />
+                  </div>
                   <h3
                     className="text-2xl font-bold text-foreground mb-4"
                     style={{ fontFamily: 'Georgia, serif' }}
@@ -59,10 +62,10 @@ export default function EventsPage() {
                 {comingSoonSections.map((section, index) => (
                   <div
                     key={index}
-                    className="stagger-item bg-card rounded-lg p-8 text-center border border-border hover:border-accent transition-colors duration-300"
+                    className="stagger-item bg-card rounded-lg p-8 text-center border border-border hover:border-accent transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group"
                   >
-                    <div className="text-4xl mb-4 text-accent/50">
-                      {section.emoji}
+                    <div className="flex justify-center mb-4">
+                      <section.icon className="w-10 h-10 text-accent/50 group-hover:text-accent/70 group-hover:scale-110 transition-all duration-300 ease-out" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground/60">{section.name}</h3>
                     <p className="text-sm text-foreground/50 mt-2">Updating Soon</p>

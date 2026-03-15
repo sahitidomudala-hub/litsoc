@@ -25,9 +25,9 @@ export default function Navigation() {
     { label: 'Home', href: '/', type: 'link' },
     { label: 'About', href: '#about', type: 'scroll' },
     { label: 'Events', href: '/events', type: 'link' },
-    { label: 'Reading Corner', href: '/reading-corner', type: 'link' },
+    { label: 'Curated Reads', href: '/reading-corner', type: 'link' },
     { label: 'Feedback', href: '/feedback', type: 'link' },
-    { label: 'Join', href: '#join', type: 'scroll' },
+    { label: 'Join', href: '/join', type: 'link' },
   ];
 
   const handleNavClick = (item: typeof navItems[0]) => {
@@ -37,19 +37,6 @@ export default function Navigation() {
     if (item.label === 'Home') {
       if (location === '/') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-      return;
-    }
-    
-    // If clicking Join, always go to home page join section
-    if (item.label === 'Join') {
-      if (location === '/') {
-        const element = document.querySelector('#join');
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      } else {
-        window.location.href = '/#join';
       }
       return;
     }

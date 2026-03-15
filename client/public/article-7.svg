@@ -1,0 +1,13 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#f39c12;stop-opacity:1" />
+</linearGradient>
+</defs>
+<rect width="1200" height="600" fill="url(#grad7)"/>
+<circle cx="300" cy="300" r="100" fill="rgba(255,255,255,0.1)"/>
+<circle cx="900" cy="200" r="80" fill="rgba(255,255,255,0.15)"/>
+<path d="M100 400 Q400 200 700 400 T1100 350" stroke="rgba(255,255,255,0.3)" stroke-width="5" fill="none"/>
+<text x="600" y="500" font-family="sans-serif" font-size="36" fill="rgba(255,255,255,0.4)" text-anchor="middle">Wellness</text>
+</svg>
