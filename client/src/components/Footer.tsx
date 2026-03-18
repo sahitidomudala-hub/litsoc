@@ -68,6 +68,9 @@ export default function Footer() {
           <p className="text-foreground/60 text-xs">
             © {currentYear} The Literary Society, STME NMIMS Hyderabad. All rights reserved.
           </p>
+          <p className="text-foreground/50 text-xs mt-2">
+            Website created by Sahiti Domudala
+          </p>
         </div>
       </div>
     </footer>
